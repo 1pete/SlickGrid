@@ -1,23 +1,23 @@
 class EventData {
   constructor() {
-    this.isPropagationStopped = false;
-    this.isImmediatePropagationStopped = false;
+    this._isPropagationStopped = false;
+    this._isImmediatePropagationStopped = false;
   }
 
   stopPropagation() {
-    this.isPropagationStopped = true;
+    this._isPropagationStopped = true;
   }
 
   isPropagationStopped() {
-    return this.isPropagationStopped;
+    return this._isPropagationStopped;
   }
 
   stopImmediatePropagation() {
-    this.isImmediatePropagationStopped = true;
+    this._isImmediatePropagationStopped = true;
   }
 
   isImmediatePropagationStopped() {
-    return this.isImmediatePropagationStopped;
+    return this._isImmediatePropagationStopped;
   }
 }
 
