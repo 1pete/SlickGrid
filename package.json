@@ -1,0 +1,15 @@
+{
+  "name": "slickgrid",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "jquery": "^2.2.0",
+    "lodash": "^4.13.0"
+  },
+  "devDependencies": {
+    "eslint": "~3.7.0",
+    "eslint-config-airbnb-base": "~8.0.0",
+    "eslint-plugin-import": "~1.16.0",
+    "jquery": "^2.2.0",
+    "lodash": "^4.13.0"
+  }
+}

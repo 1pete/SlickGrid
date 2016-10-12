@@ -1,0 +1,20 @@
+extends: airbnb-base
+env:
+  browser: true
+rules:
+  func-names: off
+  guard-for-in: off # TODO: remove
+  max-len: off
+  no-bitwise: off
+  no-cond-assign: off
+  no-continue: off
+  no-constant-condition: [error, { checkLoops: false }]
+  no-mixed-operators: off
+  no-param-reassign: off
+  no-plusplus: off
+  no-prototype-builtins: off # TODO: remove
+  no-restricted-syntax: off # TODO: remove
+  no-shadow: off
+  no-underscore-dangle: off
+  no-use-before-define: [error, { functions: false }]
+  prefer-const: off
