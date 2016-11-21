@@ -1,9 +1,8 @@
 {
   "name": "slickgrid",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "peerDependencies": {
-    "jquery": "^2.2.0",
-    "lodash": "^4.13.0"
+    "jquery": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "~3.7.0",
