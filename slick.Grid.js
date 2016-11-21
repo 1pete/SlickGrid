@@ -14,7 +14,6 @@
  *     Cell editors must make sure they implement .destroy() and do proper cleanup.
  */
 
-import _ from 'lodash';
 import $ from 'jquery';
 import './lib/jquery.event.drag-2.2';
 import './lib/jquery.event.drop-2.2';
@@ -287,7 +286,7 @@ function SlickGrid(container, data, columns, options) {
     let oldViewportHasVScroll = viewportHasVScroll;
     viewportHasVScroll = numberOfRows * options.rowHeight > viewportH;
 
-    _.forEach(rowsCache, (cache, id) => {
+    Object.keys(rowsCache).forEach((id) => {
       let row = data.getIdxById(id);
       if (row >= numberOfRows) {
         removeRowFromCache(id);
@@ -1019,7 +1018,7 @@ function SlickGrid(container, data, columns, options) {
       }
     }
 
-    _.forEach(groups, (group) => {
+    Object.values(groups).forEach((group) => {
       group.groupEl.width(group.width);
     });
 
@@ -1306,14 +1305,14 @@ function SlickGrid(container, data, columns, options) {
   function getInactiveRows() {
     let range = getRenderedRange();
 
-    return _.reject(Object.keys(rowsCache), (rowId) => {
+    return Object.keys(rowsCache).filter((rowId) => {
       let row = data.getIdxById(rowId);
-      return row != null && range.top <= row && row <= range.bottom;
+      return row == null || range.top > row || row > range.bottom;
     });
   }
 
   function cleanupRows(rangeToKeep) {
-    _.forEach(rowsCache, (cache, id) => {
+    Object.keys(rowsCache).forEach((id) => {
       let row = data.getIdxById(id);
       if (row !== activeRow && (row < rangeToKeep.top || row > rangeToKeep.bottom)) {
         removeRowFromCache(id);
@@ -1328,7 +1327,7 @@ function SlickGrid(container, data, columns, options) {
   }
 
   function invalidateAllRows() {
-    _.forEach(rowsCache, (cache, id) => {
+    Object.keys(rowsCache).forEach((id) => {
       removeRowFromCache(id);
     });
   }
